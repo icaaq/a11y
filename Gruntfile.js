@@ -9,13 +9,55 @@ module.exports = function(grunt) {
 
         pkg: grunt.file.readJSON('package.json'),
 
+        /**
+        * gunt-contrib-watch
+        */
         watch: {
             sass: {
-                files: ['/app/assets/*.scss'],
+                files: ['app/**/*.{scss,sass}'],
                 tasks: [
                     "sass:server"
                 ]
-            }
+            },
+            assemble: {
+                files: ['app/**/*.{md,hbs,json,yml}'],
+                tasks: [
+                    "assemble"
+                ],
+                options: {
+                    livereload: true,
+                },
+            },
+            js : {
+                files: ["Gruntfile.js", "app/**/*.js"],
+                tasks: [
+                    "jshint"
+                ],
+                options: {
+                    livereload: true,
+                },
+            },
+            livereload: {
+                // Here we watch the files the sass task will compile to
+                // These files are sent to the live reload server after sass compiles to them
+                files: ['master.css'],
+                options: {
+                    livereload: true
+                }
+            },
+        },
+
+        /**
+        * gunt-contrib-jshint
+        */
+        jshint: {
+            options: {
+                reporter: require('jshint-stylish')
+            },
+            all: [
+                "Gruntfile.js",
+                "app/**/*.js"
+            ]
         },
 
         /**
@@ -48,7 +90,7 @@ module.exports = function(grunt) {
               dest: './temp'
             },
             data: ['src/data/*.{json,yml}', 'package.json'],
-            assets: './assets/',
+            assets: './dist/assets/',
             //helpers: ['src/extensions/*.js', 'helper-prettify'],
             partials: ['app/templates/includes/**/*.{hbs,md}'],
             layoutdir: 'app/templates/layouts',
@@ -71,10 +113,6 @@ module.exports = function(grunt) {
             ]
           }
         }
-    });
-
-    grunt.event.on('watch', function(action, filepath, target) {
-        grunt.log.writeln(target + ': ' + filepath + ' has ' + action);
     });
 
     // These plugins provide necessary tasks.
