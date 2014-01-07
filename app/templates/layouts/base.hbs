@@ -18,6 +18,13 @@
         <!--[if lt IE 9]>
         <script src="{{assets}}/js/lib/html5shim.js"></script>
         <![endif]-->
+
+        {{#if production}}
+        <script src="dist/assets/script.min.js"></script>
+        {{else}}
+        <script src="dist/assets/script.js"></script>
+        {{/if}}
+
     </head>
     <body>
         {{> body }}

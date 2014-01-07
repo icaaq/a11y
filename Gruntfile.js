@@ -23,10 +23,7 @@ module.exports = function(grunt) {
                 files: ['app/**/*.{md,hbs,json,yml}'],
                 tasks: [
                     "assemble"
-                ],
-                options: {
-                    livereload: true,
-                },
+                ]
             },
             js : {
                 files: ["Gruntfile.js", "app/**/*.js"],
@@ -40,7 +37,10 @@ module.exports = function(grunt) {
             livereload: {
                 // Here we watch the files the sass task will compile to
                 // These files are sent to the live reload server after sass compiles to them
-                files: ['master.css'],
+                files: [
+                    "master.css",
+                    "dist/index.html"
+                ],
                 options: {
                     livereload: true
                 }
@@ -74,7 +74,7 @@ module.exports = function(grunt) {
             server: {
                 files: [
                     {
-                        'master.css': 'app/assets/master.scss'
+                        'master.css': 'app/ui/sass/master.scss'
                     }
                 ]
             }
@@ -85,30 +85,39 @@ module.exports = function(grunt) {
             today: '<%= grunt.template.today() %>',
             production: false,
             flatten: true,
-            // plugins: ['assemble-contrib-contextual'],
             contextual: {
               dest: './temp'
             },
             data: ['src/data/*.{json,yml}', 'package.json'],
-            assets: './dist/assets/',
+            assets: './dist/ui/',
             //helpers: ['src/extensions/*.js', 'helper-prettify'],
             partials: ['app/templates/includes/**/*.{hbs,md}'],
             layoutdir: 'app/templates/layouts',
             layout: 'default.hbs',
-            marked: {sanitize: false },
-            prettify: {
-              indent: 2,
-              condense: true,
-              padcomments: true
-            }
           },
-          pages: {
+          dist: {
+            options: {
+                production: false
+            },
             files: [
               {
                 expand: true,
                 cwd: 'app/pages',
-                src: ['*.hbs'],
+                src: ['**/*.hbs'],
                 dest: './dist/'
+              }
+            ]
+          },
+          prod: {
+            options: {
+                production: true
+            },
+            files: [
+              {
+                expand: true,
+                cwd: 'app/pages',
+                src: ['**/*.hbs'],
+                dest: './prod/'
               }
             ]
           }
@@ -119,6 +128,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('assemble' );
 
     // Default task.
-    grunt.registerTask("default", ["assemble", "watch"]);
+    grunt.registerTask("default", ["assemble:dist", "watch"]);
+
+    grunt.registerTask("prod", ["assemble:prod"]);
 
 };
