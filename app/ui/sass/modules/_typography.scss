@@ -1,0 +1,311 @@
+@mixin t-default-body {
+    font-family: $default-font-family;
+    font-weight: $default-font-weight;
+    line-height: $default-line-height;
+
+    @include to-rem(font-size, $base-font-size);
+}
+
+@mixin t-default-h1 {
+    font-family: $title-font-family;
+    font-weight: $heavy-font-weight;
+    line-height: $less-line-height;
+
+    @include to-rem(font-size, $h1-size);
+}
+
+@mixin t-section-title {
+    font-family: $title-font-family;
+    font-weight: $heavy-font-weight;
+    line-height: $less-line-height;
+
+    @include to-rem(font-size, $h1-size);
+}
+
+@mixin t-default-h2 {
+    font-family: $title-font-family;
+    font-weight: $heavy-font-weight;
+    line-height: $default-line-height;
+
+    @include to-rem(font-size, $h2-size);
+}
+
+@mixin t-component-title {
+    font-family: $title-font-family;
+    font-weight: $heavy-font-weight;
+    line-height: $default-line-height;
+
+    @include to-rem(font-size, $h2-size);
+}
+
+@mixin t-default-h3 {
+    font-family: $title-font-family;
+    font-weight: $heavy-font-weight;
+    line-height: $default-line-height;
+
+    @include to-rem(font-size, $h3-size);
+}
+
+@mixin t-default-h4 {
+    font-family: $title-font-family;
+    font-weight: $heavy-font-weight;
+    line-height: $default-line-height;
+
+    @include to-rem(font-size, $h4-size);
+}
+
+@mixin t-component-compact-title {
+    font-family: $title-font-family;
+    font-weight: $heavy-font-weight;
+    line-height: $default-line-height;
+
+    @include to-rem(font-size, $h4-size);
+}
+
+@mixin t-article-body {
+    font-family: $default-font-family;
+    font-weight: $default-font-weight;
+    line-height: $extra-line-height;
+
+    @include to-rem(font-size, $base-font-size);
+}
+
+@mixin t-blockquote {
+    font-family: $title-font-family;
+    font-weight: $light-font-weight;
+    line-height: $extra-line-height;
+
+    @include to-rem(font-size, $h2-size);
+}
+
+@mixin t-preamble {
+    font-family: $title-font-family;
+    font-weight: $light-font-weight;
+    line-height: $extra-line-height;
+
+    @include to-rem(font-size, $h2-size);
+}
+
+@mixin t-big-list {
+    font-family: $title-font-family;
+    font-weight: $light-font-weight;
+    line-height: $default-line-height;
+
+    @include to-rem(font-size, $h2-size);
+}
+
+@mixin t-main-title {
+    font-family: $title-font-family;
+    font-weight: $heavy-font-weight;
+    line-height: $less-line-height;
+
+    @include to-rem(font-size, $kilo-size);
+}
+
+@mixin t-component-ribbon-title {
+    font-family: $title-font-family;
+    font-weight: $heavy-font-weight;
+    line-height: $default-line-height;
+
+    @include to-rem(font-size, $compact-font-size);
+}
+
+@mixin t-component-body {
+    font-family: $default-font-family;
+    font-weight: $default-font-weight;
+    line-height: $default-line-height;
+
+    @include to-rem(font-size, $compact-font-size);
+}
+
+@mixin t-pubdate {
+    font-family: $title-font-family;
+    font-weight: $light-font-weight;
+    line-height: $default-line-height;
+
+    @include to-rem(font-size, $base-font-size);
+}
+
+@mixin t-banner-tagline {
+    font-family: $title-font-family;
+    font-weight: $light-font-weight;
+    line-height: $default-line-height;
+
+    @include to-rem(font-size, $small-font-size);
+}
+
+@mixin t-meta {
+    font-family: $title-font-family;
+    font-weight: $light-font-weight;
+    line-height: $default-line-height;
+    text-transform: uppercase;
+
+    @include to-rem(font-size, $small-font-size);
+}
+
+@mixin t-details {
+    font-family: $title-font-family;
+    font-weight: $light-font-weight;
+    line-height: $default-line-height;
+
+    @include to-rem(font-size, $small-font-size);
+}
+
+@mixin t-menu {
+    font-family: $title-font-family;
+    font-weight: $default-font-weight;
+    line-height: $default-line-height;
+
+    @include to-rem(font-size, $base-font-size);
+}
+
+@mixin t-button {
+    font-family: $title-font-family;
+    font-weight: $default-font-weight;
+    line-height: $default-line-height;
+
+    @include to-rem(font-size, $base-font-size);
+}
+
+@mixin t-featured-title {
+    font-family: $default-font-family;
+    font-weight: $default-font-weight;
+    line-height: $default-line-height;
+
+    @include to-rem(font-size, $h3-size);
+}
+
+@mixin t-featured-body {
+    font-family: $title-font-family;
+    font-weight: $light-font-weight;
+    line-height: $default-line-height;
+
+    @include to-rem(font-size, $compact-font-size);
+}
+
+////////
+
+%t-default-body {
+    @include t-default-body;
+}
+
+%t-default-h1, %t-section-title {
+    @include t-default-h1;
+}
+
+%t-default-h2,
+%t-component-title {
+    @include t-default-h2;
+}
+
+%t-default-h3 {
+    @include t-default-h3;
+}
+
+%t-default-h4,
+%t-component-compact-title {
+    @include t-default-h4;
+}
+
+%t-article-body {
+    @include t-article-body;
+}
+
+%t-preamble,
+%t-blockquote {
+    @include t-preamble;
+}
+
+%t-big-list {
+    @include t-big-list;
+}
+
+%t-main-title {
+    @include t-main-title;
+}
+
+%t-component-ribbon-title {
+    @include t-component-ribbon-title;
+}
+
+%t-component-body {
+    @include t-component-body;
+}
+
+%t-pubdate {
+    @include t-pubdate;
+}
+
+%t-meta {
+    @include t-meta;
+}
+
+%t-details {
+    @include t-details;
+}
+
+%t-banner-tagline {
+    @include t-banner-tagline;
+}
+
+%t-menu {
+    @include t-menu;
+}
+
+%t-button {
+    @include t-button;
+}
+
+%t-featured-title {
+    @include t-featured-title;
+}
+
+%t-featured-body {
+    @include t-featured-body;
+}
+
+html {
+    $adjust-font-size-for-small-screens: false !default;
+
+    @if($adjust-font-size-for-small-screens == true){
+        font-size: 87.5%; //14px rem base
+
+        @include media-query(big-palm){
+            font-size: 100%;//16px rem base 100%
+        }
+
+        @include media-query(lap-and-up){
+            font-size: $font-size * 1%;//18px rem base 112.5%
+        }
+    } @else {
+        font-size: $font-size * 1%;//18px rem base 112.5%
+    }
+
+    @include prefixer(hyphens, auto, webkit moz ms spec);
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+body {
+    @extend %t-default-body;
+}
+
+h1, .alpha {
+    @extend %t-default-h1;
+}
+
+h2, .beta {
+    @extend %t-default-h2;
+}
+
+h3, .gamma {
+    @extend %t-default-h3;
+}
+
+h4, .delta {
+    @extend %t-default-h4;
+}
+
+.editorial-content {
+    @extend %t-article-body;
+}

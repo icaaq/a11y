@@ -22,7 +22,7 @@ module.exports = function(grunt) {
             assemble: {
                 files: ['app/**/*.{md,hbs,json,yml}'],
                 tasks: [
-                    "assemble"
+                    "assemble:dist"
                 ]
             },
             js : {
@@ -38,7 +38,7 @@ module.exports = function(grunt) {
                 // Here we watch the files the sass task will compile to
                 // These files are sent to the live reload server after sass compiles to them
                 files: [
-                    "master.css",
+                    "app/ui/css/master.css",
                     "dist/index.html"
                 ],
                 options: {
@@ -56,7 +56,8 @@ module.exports = function(grunt) {
             },
             all: [
                 "Gruntfile.js",
-                "app/**/*.js"
+                "app/**/*.js",
+                "!app/**/lib/*"
             ]
         },
 
@@ -74,7 +75,7 @@ module.exports = function(grunt) {
             server: {
                 files: [
                     {
-                        'master.css': 'app/ui/sass/master.scss'
+                        'app/ui/css/master.css': 'app/ui/sass/master.scss'
                     }
                 ]
             }
@@ -97,6 +98,7 @@ module.exports = function(grunt) {
           },
           dist: {
             options: {
+                assets: './app/ui/',
                 production: false
             },
             files: [

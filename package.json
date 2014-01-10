@@ -13,20 +13,21 @@
     "grunt-contrib-uglify": "~0.2.7",
     "grunt-contrib-sass": "~0.6.0",
     "assemble": "~0.4.33",
-    "jshint-stylish": "~0.1.4"
+    "jshint-stylish": "~0.1.4",
+    "grunt-contrib-copy": "~0.5.0"
   },
   "jshintConfig": {
-    "boss":      true,
-    "node":      true,
-    "strict":    true,
+    "boss": true,
+    "node": true,
+    "strict": true,
     "smarttabs": true,
-    "undef":     true,
-    "unused":    true,
-    "onecase":   true,
+    "undef": true,
+    "unused": true,
+    "onecase": true,
     "lastsemic": true,
-    "newcap":    false,
-    "maxlen":    100,
-    "indent":    6,
+    "newcap": false,
+    "maxlen": 100,
+    "indent": 6,
     "quotmark": "double"
   }
 }

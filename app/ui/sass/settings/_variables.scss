@@ -1,0 +1,35 @@
+$body-width: 800px;
+
+$default-font-family: "Georgia",  serif;
+$title-font-family: "webfont-Frutiger", sans-serif;
+$icon-font-family: "sll-symbols";
+
+$default-font-weight: 400;
+$heavy-font-weight: 700;
+$light-font-weight: 200;
+
+$font-size: 112.5 !default; // percentage value (16 * 112.5% = 18px)
+$font-base: 16 * ($font-size/100) !default; // converts our percentage to a pixel value
+
+$base-font-size: 18px;
+$base-line-height: 22px; // 1.2222222222222
+$default-line-height: 1.2222222222222;//22px
+$extra-line-height: 1.5; //27px
+$less-line-height: 1.1111111111111;//20px
+
+$compact-font-size: 16px;
+$small-font-size: 15px;
+
+$giga-size:         90px;
+$mega-size:         72px;
+$kilo-size:         48px;
+$h1-size:           36px; // .alpha
+$h2-size:           24px; // .beta
+$h3-size:           21px; // .gamma
+$h4-size:           18px; // .delta
+$milli-size:        16px;
+$micro-size:        15px;
+
+$global-border-box: false;
+
+$base-spacing-unit: $base-line-height;
